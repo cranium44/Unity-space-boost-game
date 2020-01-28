@@ -10,7 +10,11 @@ public class Rocket : MonoBehaviour
     Rigidbody rigidbody;
     AudioSource audioSource;
     [SerializeField] AudioClip mainEngine;
-    [SerializeField] ParticleSystem particleSystem;
+    [SerializeField] AudioClip endJingle;
+    [SerializeField] AudioClip deathExplosion;
+    [SerializeField] ParticleSystem fire;
+    [SerializeField] ParticleSystem explosion;
+    [SerializeField] ParticleSystem fireworks;
 
     // Start is called before the first frame update
     void Start()
@@ -29,13 +33,21 @@ public class Rocket : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        // int current = SceneManager.GetActiveScene()
         switch (collision.gameObject.tag)
         {
+            case "Start":
             case "Friendly":
                 print("ok");
                 break;
+            case "Finish":
+                audioSource.Stop();
+                audioSource.PlayOneShot(endJingle);
+                fireworks.Play();
+                SceneManager.LoadScene(1);
+                break;
             default:
-                print("dead");
+                SceneManager.LoadScene(0);
                 break;
         }
     }
@@ -64,7 +76,7 @@ public class Rocket : MonoBehaviour
             if (!audioSource.isPlaying)
             {
                 audioSource.PlayOneShot(mainEngine);
-                particleSystem.Play();
+                fire.Play();
                 
             }
         }
