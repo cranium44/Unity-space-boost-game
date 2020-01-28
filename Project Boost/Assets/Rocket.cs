@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Rocket : MonoBehaviour
 {
@@ -10,6 +9,8 @@ public class Rocket : MonoBehaviour
     [SerializeField] float verticalThrust = 500;
     Rigidbody rigidbody;
     AudioSource audioSource;
+    [SerializeField] AudioClip mainEngine;
+    [SerializeField] ParticleSystem particleSystem;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class Rocket : MonoBehaviour
     {
         Rotate();
         Thrust();
+        
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -61,7 +63,9 @@ public class Rocket : MonoBehaviour
             rigidbody.AddRelativeForce(Vector3.up * rotationSpeed);
             if (!audioSource.isPlaying)
             {
-                audioSource.Play();
+                audioSource.PlayOneShot(mainEngine);
+                particleSystem.Play();
+                
             }
         }
         else
