@@ -276,6 +276,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 121021153, guid: b610736014cc0a24cbd34d328fe37070, type: 3}
+      propertyPath: fire
+      value: 
+      objectReference: {fileID: 198100719057022332, guid: a3553fd250eb92d4091bebde350c6739,
+        type: 3}
+    - target: {fileID: 121021153, guid: b610736014cc0a24cbd34d328fe37070, type: 3}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 198204746014789312, guid: ab79a37535b979f48b6de56e3a0a5cb0,
+        type: 3}
+    - target: {fileID: 121021153, guid: b610736014cc0a24cbd34d328fe37070, type: 3}
+      propertyPath: fireworks
+      value: 
+      objectReference: {fileID: 198631066050499358, guid: 62198a3a5dbb64a4f9e1618929224faa,
+        type: 3}
+    - target: {fileID: 121021153, guid: b610736014cc0a24cbd34d328fe37070, type: 3}
+      propertyPath: endJingle
+      value: 
+      objectReference: {fileID: 8300000, guid: 5443a238e6e1c8944b300f7b300e4462, type: 3}
+    - target: {fileID: 121021153, guid: b610736014cc0a24cbd34d328fe37070, type: 3}
+      propertyPath: deathExplosion
+      value: 
+      objectReference: {fileID: 8300000, guid: 20dbaf242df2e0f4da0870250433c9e4, type: 3}
     - target: {fileID: 121021152, guid: b610736014cc0a24cbd34d328fe37070, type: 3}
       propertyPath: m_Drag
       value: 0.25
